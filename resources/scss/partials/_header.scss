@@ -1,0 +1,39 @@
+header{
+     height: 100px;
+     nav{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 80%;
+          margin: 0 auto;
+          img{
+               width: 80px;
+          }
+          ul{
+               display: flex;
+               li{
+                    list-style: none;
+                    margin: 0 10px;
+                    line-height: 100px;
+                    a{
+                         text-decoration: none;
+                         color: black;
+                         text-transform: uppercase; 
+                    }
+                    &.active {
+                         border-bottom: 5px solid #0282f9; 
+                    }
+                    &.active a {
+                         color: blue;
+                    }
+                    &:hover {
+                         border-bottom: 5px solid #0282f9; 
+                    }
+                    &:hover a{
+                         color: #0282f9; 
+                    }
+               }
+          
+          }
+     }
+}
