@@ -25,10 +25,17 @@ class ComicController extends Controller
         $form_data = $request->all();
 
         $newComic = new Comic();
-        $newComic->fill();
+        $newComic->fill($form_data);
         $newComic->save();
 
         return redirect()->route('comics.index');
+
+        $request->validate([
+            'title'=>'required'
+        ],
+        [
+           'title.required'=>'Il titolo è obbligatorio',
+        ]);
     }
 
     public function show($id)
