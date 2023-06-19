@@ -14,5 +14,8 @@
 
      @include('partials.footer')
 
+     <script>
+          @yield('scripts-custom')
+     </script>
 </body>
 </html>

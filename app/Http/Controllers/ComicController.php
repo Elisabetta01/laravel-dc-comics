@@ -37,6 +37,27 @@ class ComicController extends Controller
 
         return view('pages.comics.show', compact('singoloComic'));
     }
+
+    public function edit(Comic $comic)
+    {
+        return view('pages.comics.edit', compact('comic'));
+    }
+
+    public function update(Request $request, Comic $comic)
+    {
+        $form_data = $request->all();
+
+        $comic->update($form_data);
+
+        return redirect()->route('comics.show', [ 'comic' => $comic->id ]);
+    }
+
+    public function destroy(Comic $comic)
+    {
+        $comic->delete();
+
+        return redirect()->route('comics.index');
+    }
 }
 
 

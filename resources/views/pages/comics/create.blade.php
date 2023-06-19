@@ -11,7 +11,7 @@
           <h1>Crea il fumetto</h1>
       
           <form action="{{ route('comics.store') }}" method="POST">
-                @csfr 
+                @csrf 
       
                 <div class="form-group">
                      <label for="comic-title" class="form-label">Title</label>

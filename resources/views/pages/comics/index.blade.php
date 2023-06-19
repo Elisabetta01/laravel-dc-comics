@@ -17,9 +17,27 @@
                         <h5 class="card-title">{{$element['title']}}</h5>
                     </div>
                 </a>
+                
+                <a class="btn btn-warning" href="{{ route('comics.edit', $element) }}">Modifica</a>
+                
+                <form action="{{ route('comics.destroy', $element) }}" method="POST">
+
+                    @csrf 
+                    @method('DELETE')
+
+                    <button onclick="return elimina()" type="submit" class="btn btn-danger w-100">Elimina</button>
+                    
+                </form>
+
                 </div>
             @endforeach  
 
         </div>
 
+@endsection
+
+@section('scripts-custom')
+    function elimina(){
+        return confirm('Sei sicuro di voler eliminare il fumetto?')
+    }
 @endsection
