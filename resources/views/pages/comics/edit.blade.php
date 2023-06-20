@@ -16,8 +16,11 @@
       
                 <div class="form-group">
                      <label for="comic-title" class="form-label">Title</label>
-                     <input type="text" id="comic-title" name="title" class="form-control" value="{{ old('title') ?? $comic->title }}">
-                </div>
+                     <input type="text" id="comic-title" name="title" class="form-control @error('title') is-invalid @enderror" value="{{ old('title') ?? $comic->title }}">
+                     @error('title')
+                         <div class="alert alert-danger">{{ $message }}</div>
+                     @enderror
+              </div>
       
                 <div class="form-group">
                      <label for="comic-description" class="form-label">Description</label>
